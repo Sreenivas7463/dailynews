@@ -6,7 +6,8 @@
 </head>
 <body>
 <div class="container">
-  <button class="btn btn-sm btn-warning my-3" id="tv9">Get News </button>
+  <button class="btn btn-sm btn-warning my-3" id="tv9">News TV9</button>
+  <button class="btn btn-sm btn-warning my-3" id="10tv">News 10TV</button>
 
     <ul id="news" class="list-group">
 
@@ -24,6 +25,17 @@ $(document).ready(function(){
   $("button#tv9").click(function(){
   var id ='';
     $.getJSON("https://tv9telugu.com/wp-json/wp/v2/posts?per_page=100&page=1", function(result){
+    console.log(result);
+      $.each(result, function(i, field){
+      
+        $("ul#news").append('<li  class="list-group-item"><h4 class="lh-base fs-4 text-primary">'+ field['title']['rendered'] +"<small> ( "+moment(field['date']).format('Do MMMM YYYY, h:mm:ss a')+" )</small>"+"</h4>"+ field['content']['rendered'] +"<p><a href="+field['link']+" target='_blank'>Source Link </a></p>"+"</li>");
+      });
+    });
+  });
+  
+  $("button#10tv").click(function(){
+  var id ='';
+    $.getJSON("https://10tv.in/wp-json/wp/v2/posts?per_page=100&page=1", function(result){
     console.log(result);
       $.each(result, function(i, field){
       
