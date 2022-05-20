@@ -28,7 +28,7 @@
 <script>
 $(document).ready(function(){
   $("button#tv9").click(function(){
-  var id ='';
+  $("ul#news").html('');
     $.getJSON("https://tv9telugu.com/wp-json/wp/v2/posts?per_page=100&page=1", function(result){
     //console.log(result);
       $.each(result, function(i, field){
@@ -39,7 +39,7 @@ $(document).ready(function(){
   });
   
   $("button#10tv").click(function(){
-  var id ='';
+  $("ul#news").html('');
     $.getJSON("https://10tv.in/wp-json/wp/v2/posts?per_page=100&page=1", function(result){
     //console.log(result);
       $.each(result, function(i, field){
@@ -50,7 +50,7 @@ $(document).ready(function(){
   });
   
   $("button#ntv").click(function(){
-  var id ='';
+  $("ul#news").html('');
     $.getJSON("https://ntvtelugu.com/wp-json/wp/v2/posts?per_page=100&page=1", function(result){
     //console.log(result);
       $.each(result, function(i, field){
@@ -61,7 +61,7 @@ $(document).ready(function(){
   });
  
  $("button#gulte").click(function(){
-  var id ='';
+  $("ul#news").html('');
     $.getJSON("https://www.gulte.com/wp-json/wp/v2/posts?per_page=100&page=1", function(result){
     //console.log(result);
       $.each(result, function(i, field){
